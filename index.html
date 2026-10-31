@@ -4,290 +4,430 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Infinite Circles — Complete Step-by-Step Worked Solution</title>
+<title>Infinite Circles — Clear Click-Through Solution</title>
 <style>
-:root{--navy:#0b1b30;--navy2:#152f48;--paper:#f5f7fa;--white:#fff;--ink:#192739;--muted:#4e6073;--border:#dbe3ec;--blue:#50d9f0;--blue-dark:#137e9a;--red:#fb7569;--red-dark:#aa473c;--gold:#ffd579;--gold-dark:#8e5c05;--green:#bce9c9;--purple:#c5b5fd;--shadow:0 14px 40px rgba(19,41,69,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 system-ui,-apple-system,'Segoe UI',sans-serif}main{width:min(1190px,94vw);margin:auto;padding:28px 0 76px}h1,h2,h3{line-height:1.17;letter-spacing:-.025em;margin:0 0 13px}h1{font:700 clamp(34px,5.4vw,68px)/1.08 Georgia,serif;letter-spacing:-.046em}h2{font-size:clamp(25px,3vw,39px)}h3{font-size:clamp(21px,2.5vw,29px)}p{margin:0 0 13px}.overline{text-transform:uppercase;letter-spacing:.15em;font-weight:900;font-size:12px;color:#126f86}.hero{padding:30px clamp(22px,4vw,52px);background:linear-gradient(125deg,#fff,#f8fbfd 55%,#f5fcff);border:1px solid var(--border);border-radius:23px;box-shadow:var(--shadow)}.hero-lead{font-size:20px;max-width:880px;color:#405569}.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.pill{border:1px solid #cfdbe4;background:#fff;padding:8px 13px;border-radius:50px;font-weight:800;font-size:14px}.answerline{font-weight:850;background:#eaf8f5;border:1px solid #bddece;color:#17513b}.block{margin-top:34px}.panel{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);border-radius:21px;padding:clamp(18px,2.8vw,30px)}.intro-grid{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(280px,.84fr);gap:22px;align-items:center}@media(max-width:860px){.intro-grid{grid-template-columns:1fr}}.inkboard{padding:0;background:var(--navy);border-radius:18px;overflow:hidden;border:1px solid #24435e;position:relative}.inkboard svg{display:block;width:100%;height:auto;aspect-ratio:900/615}.inkboard figcaption{background:#10283e;color:#d7e4ee;font-size:13px;padding:10px 15px}.key{display:grid;gap:11px}.keyrow{display:grid;grid-template-columns:30px 1fr;gap:11px;align-items:start;padding:9px 0;border-bottom:1px solid #e4e9ef}.keyrow:last-child{border-bottom:0}.circlekey{width:23px;height:23px;border-radius:100%;margin-top:4px;border:1px solid #49637d}.keyrow b{display:block}.muted{color:var(--muted)}.rule{margin:15px 0;padding:15px 17px;border-left:4px solid #1c91ad;background:#eef9fc;border-radius:0 12px 12px 0}.rule.red{background:#fff2ef;border-color:#d55850}.rule.gold{background:#fff9e9;border-color:#be8b21}.steps-intro{color:var(--muted);max-width:900px}.interact{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.95fr);gap:22px;align-items:start}@media(max-width:990px){.interact{grid-template-columns:1fr}}.studio{position:sticky;top:14px}@media(max-width:990px){.studio{position:static}}.stage-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}@media(max-width:490px){.stage-list{grid-template-columns:1fr}}button{font:inherit;cursor:pointer;background:#fff;color:var(--ink);border:1px solid #cbd8e3;border-radius:10px;padding:10px 12px;min-height:44px;font-size:14px;font-weight:850;text-align:left}button:hover{border-color:#7ca9c3;background:#f0f9fb}button:focus-visible,input:focus-visible{outline:3px solid #1c94b1;outline-offset:2px}button[aria-pressed="true"]{background:#142d45;color:#fff;border-color:#142d45}.control-row{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}.control-row button{flex:1;text-align:center}.control-row .primary{background:#152e48;color:#fff}.step-copy{min-width:0;padding:24px;border:1px solid var(--border);border-radius:17px;background:#fff}.step-copy .seq{font-size:12px;font-weight:950;letter-spacing:.1em;text-transform:uppercase;color:#157c95}.step-copy h3{margin-top:7px}.step-copy p{margin-bottom:13px}.calc{font-family:'Cambria Math','STIX Two Math',Georgia,serif;font-size:clamp(17px,1.8vw,22px);font-weight:650;line-height:1.6;text-align:center;overflow-x:auto;white-space:nowrap;background:#f4f7fa;border:1px solid #e0e7ee;padding:12px 8px;border-radius:10px;margin:13px 0}.calc.highlight{background:#fff6e3;border-color:#e4cb8f}.calc.answer{background:#eaf8f1;border-color:#a7dac2;color:#205c42;font-size:clamp(21px,2.4vw,29px)}.frac{display:inline-flex;vertical-align:middle;flex-direction:column;line-height:1.14;text-align:center;align-items:stretch;min-width:1.2em;margin:0 .15em}.frac .num{padding:0 .12em .09em;border-bottom:1.75px solid currentColor}.frac .den{padding:.12em .12em 0}.fractionNote{font-size:14px;color:var(--muted)}.source{padding:12px;background:#eef7ff;border-left:4px solid #1d87b5;border-radius:0 9px 9px 0;margin:13px 0}.sumbox{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:14px 0}@media(max-width:620px){.sumbox{grid-template-columns:1fr}}.sumbox>div{border-radius:13px;border:1px solid var(--border);padding:13px;background:#f8fafc}.sumbox strong{display:block;font-size:15px}.sumbox .calc{padding:8px;margin:9px 0 0}.shrinkbox{padding:14px 16px;border:1px solid #e3cd95;border-radius:13px;background:#fff9e9;margin-top:12px}.shrinkbox label{display:flex;justify-content:space-between;font-weight:850;gap:10px;font-size:15px}.shrinkbox input{width:100%;accent-color:#b27c23;margin:12px 0}.shrinkbox .hint{font-size:14px;color:#7b5b23}.proof-section{margin-top:34px}.proof-card{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:23px;align-items:center;border:1px solid var(--border);background:#fff;border-radius:18px;padding:clamp(17px,2.8vw,27px);margin-top:17px;box-shadow:var(--shadow)}.proof-card:nth-child(odd) .proof-text{order:2}.proof-card:nth-child(odd) .proof-picture{order:1}@media(max-width:880px){.proof-card{grid-template-columns:1fr}.proof-card:nth-child(odd) .proof-text,.proof-card:nth-child(odd) .proof-picture{order:initial}}.proof-card .inkboard{max-width:100%}.proof-card h3{font-size:25px}.proof-card .stepnum{display:inline-flex;align-items:center;justify-content:center;background:#142d45;color:#fff;border-radius:50%;width:39px;height:39px;font-weight:900;margin-bottom:11px}.proof-card .calc{font-size:clamp(16px,1.8vw,21px)}.proof-card .calc.answer{font-size:23px}.proof-card p{margin:7px 0 12px}.tape{display:grid;grid-template-columns:1fr;gap:9px}.tape>div{background:#f9fbfd;border:1px solid var(--border);border-radius:12px;padding:12px 14px}.tape b{color:#1d5771}.final{margin-top:38px;padding:clamp(23px,4vw,42px);border-radius:22px;background:#101f34;color:#fff}.final h2{color:#fff}.final p{color:#dbe8f1}.final .big{font:800 clamp(34px,5vw,60px)/1.25 Georgia,serif;color:#fff7d5;text-align:center;background:#1c354d;border:1px solid #42627c;border-radius:17px;padding:22px;margin:18px 0}.foot{margin-top:32px;border-top:1px solid var(--border);padding-top:15px;color:var(--muted);font-size:13px}.can-check{border:1px solid #bbdbc9;background:#f1faf3;padding:15px;border-radius:12px;margin:14px 0}.can-check strong{color:#1c6740}.all-steps .proof-card:nth-of-type(odd) .proof-text{order:initial}.all-steps .proof-card:nth-of-type(odd) .proof-picture{order:initial}#noScript{padding:15px;border:1px solid #f0b5a1;border-radius:12px;background:#fff2ed;margin-top:12px}@media print{main{width:100%;padding:0}body{background:#fff}.studio,.stage-list,.control-row,.shrinkbox{display:none!important}.proof-card{break-inside:avoid;box-shadow:none}.hero{box-shadow:none}.all-steps{display:block}}
+:root{
+  --bg:#f4f7fb; --card:#ffffff; --ink:#17263b; --muted:#526579; --line:#d9e2ec;
+  --navy:#0f2035; --blue:#45d4ec; --red:#ff7765; --gold:#ffd166; --green:#dff6e9;
+  --soft:#eef4f8; --shadow:0 12px 32px rgba(15,32,53,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{width:min(1180px,94vw);margin:0 auto;padding:28px 0 44px}
+.hero,.wrap,.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:24px 28px;margin-bottom:22px}
+.hero .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#0f7d92;font-weight:900;margin-bottom:10px}
+h1{font:700 clamp(30px,4.8vw,58px)/1.05 Georgia,serif;margin:0 0 12px;letter-spacing:-.04em}
+.hero p{margin:0;color:var(--muted);max-width:900px}
+.wrap{padding:18px}
+.layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:18px;align-items:start}
+.board{background:var(--navy);border-radius:18px;overflow:hidden;border:1px solid #1e3a58;position:sticky;top:14px}
+.board svg{display:block;width:100%;height:auto;aspect-ratio:900/620}
+.textpanel{padding:22px 22px 18px}
+.stepnum{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#11798f;margin-bottom:7px}
+h2{font-size:clamp(24px,3vw,38px);line-height:1.12;letter-spacing:-.03em;margin:0 0 12px}
+p{margin:0 0 13px}
+.note{background:#eef9fc;border-left:4px solid #1092ab;padding:12px 14px;border-radius:0 12px 12px 0;margin:14px 0}
+.note.gold{background:#fff8e8;border-left-color:#bf8d1f}
+.note.green{background:#eefbf3;border-left-color:#2f9c63}
+.math{font-family:"Cambria Math", "STIX Two Math", Georgia, serif;font-size:clamp(20px,2.3vw,30px);line-height:1.55;font-weight:650;background:#f6f8fa;border:1px solid #e1e8ef;border-radius:14px;padding:13px 16px;margin:14px 0;overflow-x:auto}
+.answer{background:var(--green);border-color:#b9e3c8;font-weight:800}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+button{font:inherit;font-weight:800;cursor:pointer;border:1px solid #cad6e2;background:#fff;color:var(--ink);border-radius:12px;padding:11px 15px;min-height:46px}
+button:hover{background:#f4f8fb;border-color:#8fb2ca}
+button.primary{background:#14283f;border-color:#14283f;color:#fff}
+button:disabled{opacity:.42;cursor:not-allowed}
+.progress{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.progress button{min-width:40px;min-height:40px;padding:8px 10px;border-radius:999px;text-align:center}
+.progress button.active{background:#0f2035;color:#fff;border-color:#0f2035}
+.small{font-size:14px;color:var(--muted)}
+.legend{display:grid;gap:10px;margin-top:14px}
+.legend .row{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+.dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(0,0,0,.2);margin-top:2px}
+.footer{margin-top:18px;color:var(--muted);font-size:13px}
+@media (max-width: 920px){.layout{grid-template-columns:1fr}.board{position:static}}
 </style>
 </head>
 <body>
 <main>
-<header class="hero">
-  <div class="overline">Complete worked solution · infinite tangent circles</div>
-  <h1>Why infinitely many red circles<br>have area exactly <span style="color:#bf4b42">1</span></h1>
-  <p class="hero-lead">A fully explained proof of the <b>3 : 3 : 2 triangle puzzle</b>, using exactly the information in the attached question. Every length is identified, every equation is justified, and every important step has its own diagram.</p>
-  <div class="hero-pills"><span class="pill">Triangle sides 3 : 3 : 2</span><span class="pill">Blue circle area = 3</span><span class="pill">Infinite red stack</span><span class="pill answerline">Total red area = 1 square unit</span></div>
-</header>
-<section class="block">
-  <h2>Start with the question</h2>
-  <div class="panel intro-grid">
-    <figure class="inkboard"><svg id="overview" viewBox="0 0 900 615" role="img" aria-label="An isosceles triangle with a blue incircle of area 3 and an infinite upward stack of red tangent circles"></svg><figcaption>The circle sizes are derived from the geometry, not assumed from the drawing.</figcaption></figure>
-    <div>
-      <p>An isosceles triangle has side lengths in the ratio <b>3 : 3 : 2</b>. The two equal sides correspond to the two 3s.</p>
-      <p>The <b>blue incircle</b> touches all three triangle sides and has area <b>3 square units</b>.</p>
-      <p>Above it is an infinite stack of <b>red circles</b>. Every red circle touches both sloping sides and the circle immediately below it.</p>
-      <p><b>Find the total area of all the red circles together.</b></p>
-      <div class="key">
-        <div class="keyrow"><span class="circlekey" style="background:var(--blue)"></span><div><b>Blue circle</b> One circle. Its AREA is 3, given in the question.</div></div>
-        <div class="keyrow"><span class="circlekey" style="background:var(--red)"></span><div><b>Red circles</b> Infinitely many, with sizes we must prove.</div></div>
-        <div class="keyrow"><span class="circlekey" style="background:var(--gold)"></span><div><b>3 : 3 : 2</b> These are SIDE-LENGTH ratios, not areas and not radii.</div></div>
+  <section class="hero">
+    <div class="kicker">Clear click-through version</div>
+    <h1>Infinite Circles — one step at a time</h1>
+    <p>This version is built like a mini PowerPoint. Press <b>Next</b> to reveal just one idea at a time. I have kept the labels much simpler, and every label is introduced exactly when it is needed.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="layout">
+      <div class="board">
+        <svg id="diagram" viewBox="0 0 900 620" role="img" aria-label="Step-by-step diagram for the infinite circles problem"></svg>
       </div>
-      <div class="rule"><b>What we need to discover:</b> the ratio between neighbouring radii. Once that is proved, the infinite area becomes manageable.</div>
-    </div>
-  </div>
-</section>
-<section class="block">
-  <h2>Essential geometry rules — before we start</h2>
-  <div class="panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px">
-    <div class="tape"><div><b>Isosceles triangles</b><p>The altitude from the top vertex to the base is perpendicular to the base and splits it into equal halves. It also bisects the top angle.</p></div></div>
-    <div class="tape"><div><b>Sine in a right triangle</b><p>sin(angle) = opposite ÷ hypotenuse. We will use this twice, with the same angle α.</p></div></div>
-    <div class="tape"><div><b>Circle tangent to a line</b><p>A radius from the centre to a tangent side is perpendicular to that side, giving a right angle.</p></div></div>
-    <div class="tape"><div><b>Two tangent circles</b><p>When circles touch externally, the distance between their centres is the <b>sum of their radii</b>.</p></div></div>
-    <div class="tape"><div><b>Area scale factor</b><p>Scaling every length by ½ scales every area by (½)² = ¼.</p></div></div>
-    <div class="tape"><div><b>An infinite series</b><p>For a geometric sequence whose common ratio is between −1 and 1, its total is finite. We will prove the total in two ways.</p></div></div>
-  </div>
-</section>
-<section class="block">
-  <h2>Interactive explanation — one step at a time</h2>
-  <p class="steps-intro">Select a stage, use Previous/Next, or play the explanation automatically. The same steps are written out again in full below so you can follow them at your own pace.</p>
-  <div class="interact">
-    <div class="studio">
-      <figure class="inkboard"><svg id="liveDiagram" viewBox="0 0 900 615" role="img" aria-label="Interactive diagram for the current proof step"></svg><figcaption id="diagramCaption">The starting diagram.</figcaption></figure>
-      <div class="control-row"><button id="prev" type="button">← Previous</button><button id="play" class="primary" type="button">Play all steps</button><button id="next" type="button">Next →</button></div>
-      <div id="shrinkBox" class="shrinkbox" hidden>
-        <label for="shrink">Shrink the gold copy of the ENTIRE stack <span id="scaleValue">Scale 1.00</span></label>
-        <input type="range" id="shrink" min="0" max="100" step="1" value="0">
-        <div class="hint" id="shrinkHint">At the end, the blue copy lands on the first red circle, and each red copy lands on the next smaller red circle.</div>
-        <div class="control-row"><button id="shrinkAnimate" type="button">Animate the match</button><button id="shrinkReset" type="button">Reset the gold copy</button></div>
+      <div class="card textpanel">
+        <div class="stepnum" id="stepnum"></div>
+        <h2 id="title"></h2>
+        <div id="content"></div>
+        <div class="controls">
+          <button id="prev">← Previous</button>
+          <button id="next" class="primary">Next →</button>
+        </div>
+        <div class="progress" id="progress"></div>
+        <p class="footer">Tip: you can also use the <b>left</b> and <b>right</b> arrow keys.</p>
       </div>
     </div>
-    <div>
-      <div id="stageNavigation" class="stage-list" aria-label="Proof stage selection"></div>
-      <article id="stageContent" class="step-copy" aria-live="polite"></article>
-      <noscript><div id="noScript">Enable JavaScript for the interactive diagrams. The written worked solution is still below.</div></noscript>
-    </div>
-  </div>
-</section>
-<section class="block all-steps" id="writtenProof">
-  <h2>Full written proof with a diagram at every step</h2>
-  <p class="steps-intro">Nothing is skipped. In particular, Steps 5–8 explain exactly where the numbers <b>3</b>, <b>4</b> and the unknown total <b>S</b> come from.</p>
-
-  <section class="proof-card" id="step0">
-    <div class="proof-text">
-      <span class="stepnum">1</span><h3>Write the given side ratio as actual expressions</h3>
-      <p>Call the triangle’s top vertex <b>A</b> and its bottom corners <b>B</b> and <b>C</b>.</p>
-      <p>The question says the two equal sides and the base are in the ratio <b>3 : 3 : 2</b>. That means we can represent their lengths by</p>
-      <div class="calc">AB = 3k, &nbsp; AC = 3k, &nbsp; BC = 2k</div>
-      <p><b>What is k?</b> It is simply some positive length that we do not know. If k were 5, the sides would be 15, 15 and 10; if k were 7, they would be 21, 21 and 14. Both have the same shape.</p>
-      <p>Draw the altitude from A to the base, meeting BC at <b>F</b>. Because the triangle is isosceles, F is the midpoint of BC and AF is perpendicular to BC.</p>
-      <div class="calc highlight">FC = <span class="frac"><span class="num">BC</span><span class="den">2</span></span> = <span class="frac"><span class="num">2k</span><span class="den">2</span></span> = k</div>
-      <div class="source"><b>Source of each number:</b> the 3 and 2 come from the stated side ratio. Dividing 2k by 2 is justified because F is the midpoint.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="0" viewBox="0 0 900 615" role="img" aria-label="Triangle sides 3k, 3k, and 2k, with altitude bisecting the base"></svg><figcaption>We have not assigned any particular value to k.</figcaption></figure>
   </section>
-
-  <section class="proof-card" id="step1">
-    <div class="proof-text">
-      <span class="stepnum">2</span><h3>Use sine to discover one crucial fraction</h3>
-      <p>Focus on <b>right triangle AFC</b>, the right-hand half of the big isosceles triangle.</p>
-      <p>Call the angle between the vertical line AF and the sloping side AC <b>α</b> (Greek letter alpha).</p>
-      <p>Relative to angle α, the <b>opposite</b> side is FC, of length k. The <b>hypotenuse</b> is AC, of length 3k.</p>
-      <div class="calc">sin α = <span class="frac"><span class="num">opposite</span><span class="den">hypotenuse</span></span> = <span class="frac"><span class="num">FC</span><span class="den">AC</span></span> = <span class="frac"><span class="num">k</span><span class="den">3k</span></span></div>
-      <p>Divide the top and bottom of the fraction by k. Because k is not zero, the k’s cancel:</p>
-      <div class="calc answer">sin α = <span class="frac"><span class="num">1</span><span class="den">3</span></span></div>
-      <p><b>We do not need to calculate the angle α itself.</b> Knowing its sine is one-third is much more useful.</p>
-      <div class="rule">This is the exact same <b>sine = opposite / hypotenuse</b> method you already know. No tangent or advanced trigonometry is needed.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="1" viewBox="0 0 900 615" role="img" aria-label="Right triangle AFC with opposite k, hypotenuse 3k and alpha at A"></svg><figcaption>The right angle is at F; the opposite side is k.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step2">
-    <div class="proof-text">
-      <span class="stepnum">3</span><h3>Why the blue centre is exactly three radii below A</h3>
-      <p>Let <b>O</b> be the centre of the blue circle, and let <b>R</b> be its radius. Do not confuse R with its given <em>area</em>.</p>
-      <p>The blue circle touches both equal sloping sides. Therefore its centre O is on the internal angle bisector, the same vertical line AF.</p>
-      <p>Let <b>E</b> be the point where the blue circle touches the right sloping side AC. The radius OE is perpendicular to AC, so <b>triangle AEO is right-angled at E</b>.</p>
-      <p>Now use the same angle α at A. In right triangle AEO, the opposite side is OE = R and the hypotenuse is AO.</p>
-      <div class="calc">sin α = <span class="frac"><span class="num">OE</span><span class="den">AO</span></span> = <span class="frac"><span class="num">R</span><span class="den">AO</span></span></div>
-      <p>But Step 2 already proved sin α = 1/3. These are two expressions for <b>the same trigonometric value</b>, so</p>
-      <div class="calc"><span class="frac"><span class="num">R</span><span class="den">AO</span></span> = <span class="frac"><span class="num">1</span><span class="den">3</span></span></div>
-      <p>Cross-multiply: 3R = AO. Thus:</p>
-      <div class="calc answer">AO = 3R</div>
-      <p>Now call the centre of the first red circle <b>P</b>, and its radius <b>r</b>. Draw its perpendicular radius PD to the same sloping side. By exactly the same right-triangle argument,</p>
-      <div class="calc answer">AP = 3r</div>
-      <div class="source"><b>What this means:</b> for <em>every</em> circle that touches both sides, its distance from the apex is precisely <b>three times its own radius</b>. We have proved it; it was not given.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="2" viewBox="0 0 900 615" role="img" aria-label="Blue centre O and red centre P, radius perpendiculars OE and PD, distances AO equals 3R and AP equals 3r"></svg><figcaption>Both centre-distance relations come from the same sine ratio.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step3">
-    <div class="proof-text">
-      <span class="stepnum">4</span><h3>Find the ratio of neighbouring radii — rigorously</h3>
-      <p>We have proved that AO = 3R and AP = 3r, where O is the blue centre and P is the first red centre.</p>
-      <p>Both centres lie on the same straight vertical line, with P between A and O. Therefore:</p>
-      <div class="calc">PO = AO − AP = 3R − 3r</div>
-      <p>But the blue and red circles are externally tangent. Let <b>T</b> be their touching point. We travel from P to T through one red radius, then from T to O through one blue radius.</p>
-      <div class="calc">PT = r &nbsp;&nbsp; and &nbsp;&nbsp; TO = R</div>
-      <div class="calc">PO = PT + TO = r + R</div>
-      <p><b>Here is the key connection.</b> The two results above are both the length of the <b>same segment PO</b>. We must therefore make them equal:</p>
-      <div class="calc highlight">3R − 3r = R + r</div>
-      <p>Add 3r to both sides:</p><div class="calc">3R = R + 4r</div>
-      <p>Subtract R from both sides:</p><div class="calc">2R = 4r</div>
-      <p>Divide both sides by 4:</p>
-      <div class="calc answer">r = <span class="frac"><span class="num">R</span><span class="den">2</span></span></div>
-      <div class="rule">The first red circle is <b>half the BLUE radius</b>. Because every neighbouring pair has exactly the same kind of tangency and touches the same sloping sides, the argument repeats forever.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="3" viewBox="0 0 900 615" role="img" aria-label="A P T O collinear; PO equals both 3R minus 3r and R plus r"></svg><figcaption>One segment PO, two independent ways to calculate it.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step4">
-    <div class="proof-text">
-      <span class="stepnum">5</span><h3>Half a radius does NOT mean half an area</h3>
-      <p>The area formula for a circle of radius R is <b>πR²</b>.</p>
-      <p>If we replace its radius with R/2, the new area is</p>
-      <div class="calc">π × (<span class="frac"><span class="num">R</span><span class="den">2</span></span>)² = π × <span class="frac"><span class="num">R²</span><span class="den">4</span></span> = <span class="frac"><span class="num">πR²</span><span class="den">4</span></span></div>
-      <p>Compare that with the original area πR². The new area is one-quarter as large:</p>
-      <div class="calc answer">radius × <span class="frac"><span class="num">1</span><span class="den">2</span></span> &nbsp;⇒&nbsp; area × <span class="frac"><span class="num">1</span><span class="den">4</span></span></div>
-      <p>We just proved that every red circle has half the radius of the circle below it. Therefore every successive <b>red area is one-quarter of the previous area</b>.</p>
-      <div class="rule red">The number 4 is not supplied in the question. It comes from <b>squaring the length scale</b>: 2² = 4.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="4" viewBox="0 0 900 615" role="img" aria-label="Neighbouring circle areas scale by one quarter"></svg><figcaption>Radius halving leads to an AREA ratio of one-quarter.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step5">
-    <div class="proof-text">
-      <span class="stepnum">6</span><h3>Work out the first few RED areas — where does the 3 come from?</h3>
-      <p><b>The original question tells us that the blue circle has area 3 square units.</b> That is where the number 3 comes from. It is <em>not</em> the blue radius.</p>
-      <p>We now know that each next circle has <b>one-quarter of the area</b> of the circle immediately below it.</p>
-      <div class="sumbox"><div><strong>Blue circle (given)</strong><div class="calc">3</div></div><div><strong>First red circle</strong><div class="calc">3 × <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">4</span></span></div></div><div><strong>Second red circle</strong><div class="calc"><span class="frac"><span class="num">3</span><span class="den">4</span></span> × <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">16</span></span></div></div><div><strong>Third red circle</strong><div class="calc"><span class="frac"><span class="num">3</span><span class="den">16</span></span> × <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">64</span></span></div></div></div>
-      <p>And the pattern continues forever. Therefore the total red area is</p>
-      <div class="calc highlight">S = <span class="frac"><span class="num">3</span><span class="den">4</span></span> + <span class="frac"><span class="num">3</span><span class="den">16</span></span> + <span class="frac"><span class="num">3</span><span class="den">64</span></span> + ···</div>
-      <p>Here we have introduced the letter <b>S</b> to mean <em>all red areas added together</em>. We have NOT yet found the value of S.</p>
-      <div class="source">To be completely clear: <b>3 = GIVEN blue area</b>; <b>¼ = PROVED area multiplier</b>; <b>S = UNKNOWN red total</b>.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="5" viewBox="0 0 900 615" role="img" aria-label="Blue area 3, first three red areas three quarters, three sixteenths and three sixty-fourths"></svg><figcaption>The areas are derived one by one from the given blue area.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step6">
-    <div class="proof-text">
-      <span class="stepnum">7</span><h3>The visual trick: shrink the ENTIRE stack onto the reds</h3>
-      <p>The entire stack contains <b>the blue circle</b> and <b>every red circle</b>. Its total area is therefore</p>
-      <div class="calc highlight">whole-stack area = 3 + S</div>
-      <p>We know a half-size copy of a circle has one-quarter of its area. Now imagine shrinking the <b>entire stack</b> about the top vertex A by a length scale of one-half.</p>
-      <p>The blue circle shrinks into the first red circle. The first red circle shrinks into the second red circle. The second red shrinks into the third red. This happens to <em>every</em> circle in the infinite chain.</p>
-      <p><b>So the scaled copy of the whole stack is precisely the original RED stack.</b> The circles cover exactly the same red region, not some additional region.</p>
-      <div class="sumbox"><div><strong>Area before shrinking</strong><div class="calc">3 + S</div></div><div><strong>Area after shrinking</strong><div class="calc"><span class="frac"><span class="num">3 + S</span><span class="den">4</span></span></div></div></div>
-      <p>But the shrunk version is the red stack. Its area is <b>S</b>, by our definition.</p>
-      <div class="calc answer">S = <span class="frac"><span class="num">3 + S</span><span class="den">4</span></span></div>
-      <div class="rule gold"><b>Where did this equation come from?</b> LEFT = red-stack area, because we named it S. RIGHT = the whole-stack area (3+S) shrunk to one-quarter. They are equal because shrinking the whole stack produces <em>exactly</em> the red stack.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="6" viewBox="0 0 900 615" role="img" aria-label="Gold half-size outline copies the whole stack onto the red circles"></svg><figcaption>The gold copies align with the red circles after scaling by ½.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step7">
-    <div class="proof-text">
-      <span class="stepnum">8</span><h3>Solve the equation without skipping any algebra</h3>
-      <p>We have just established</p>
-      <div class="calc">S = <span class="frac"><span class="num">3 + S</span><span class="den">4</span></span></div>
-      <p>Multiply <b>both sides</b> by 4. On the right, the 4 cancels the denominator:</p>
-      <div class="calc">4S = 3 + S</div>
-      <p>Subtract S from both sides:</p>
-      <div class="calc">4S − S = 3 + S − S</div>
-      <div class="calc">3S = 3</div>
-      <p>Divide both sides by 3:</p>
-      <div class="calc answer">S = 1 square unit</div>
-      <p>This is the sum of <b>ALL</b> red circles, infinitely many of them. It is not the first red circle alone. The first red circle is ¾ square unit, and the remaining infinitely many circles contribute the final ¼.</p>
-      <div class="source"><b>Meaning of every symbol in the equation:</b> S is the desired total, 3 is the given blue area, and 4 is the area reduction from half-scale lengths.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="7" viewBox="0 0 900 615" role="img" aria-label="Equation S equals three plus S divided by four yielding S equals one"></svg><figcaption>A different description of the same red area leads to S = 1.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step8">
-    <div class="proof-text">
-      <span class="stepnum">9</span><h3>Independent check without shrinking any diagrams</h3>
-      <p>Start with the red-area series from Step 6:</p>
-      <div class="calc">S = <span class="frac"><span class="num">3</span><span class="den">4</span></span> + <span class="frac"><span class="num">3</span><span class="den">16</span></span> + <span class="frac"><span class="num">3</span><span class="den">64</span></span> + ···</div>
-      <p>One-quarter of S shifts every term one place to the right:</p>
-      <div class="calc"><span class="frac"><span class="num">S</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">16</span></span> + <span class="frac"><span class="num">3</span><span class="den">64</span></span> + <span class="frac"><span class="num">3</span><span class="den">256</span></span> + ···</div>
-      <p>Subtract the second line from the first. Every term after the very first matches and cancels:</p>
-      <div class="calc highlight">S − <span class="frac"><span class="num">S</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">4</span></span></div>
-      <p>Write S as four quarters of S:</p>
-      <div class="calc"><span class="frac"><span class="num">4S</span><span class="den">4</span></span> − <span class="frac"><span class="num">S</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">4</span></span></div>
-      <div class="calc"><span class="frac"><span class="num">3S</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">4</span></span></div>
-      <div class="calc answer">S = 1</div>
-      <p>The same answer has been obtained in a completely different way.</p>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="8" viewBox="0 0 900 615" role="img" aria-label="Subtracting aligned geometric-series terms yields total area one"></svg><figcaption>The infinite tail cancels because it is a quarter-size copy of itself.</figcaption></figure>
-  </section>
-
-  <section class="proof-card" id="step9">
-    <div class="proof-text">
-      <span class="stepnum">10</span><h3>Why the infinite answer is exact — not an approximation</h3>
-      <p>Check what happens if we stop after a few red circles. Each total gets closer to 1.</p>
-      <div class="sumbox"><div><strong>First red only</strong><div class="calc">0.750000</div></div><div><strong>First 2 reds</strong><div class="calc">0.937500</div></div><div><strong>First 3 reds</strong><div class="calc">0.984375</div></div><div><strong>First 4 reds</strong><div class="calc">0.99609375</div></div></div>
-      <p>For the first N red circles, the exact partial sum is</p>
-      <div class="calc">S<sub>N</sub> = 1 − <span class="frac"><span class="num">1</span><span class="den">4<sup>N</sup></span></span></div>
-      <p>As N grows, 4<sup>N</sup> becomes arbitrarily large, so 1/4<sup>N</sup> becomes arbitrarily close to zero.</p>
-      <p>The circles continue forever, so the remaining gap tends to zero and the exact total is</p>
-      <div class="calc answer">S = 1 square unit</div>
-      <div class="can-check"><strong>Final distinction:</strong> The total red area is <b>1</b>; the given blue area is <b>3</b>. The complete coloured stack has area <b>4</b>. Its one-quarter-size copy has area <b>1</b>, which is precisely the red stack.</div>
-    </div>
-    <figure class="proof-picture inkboard"><svg class="staticDiagram" data-scene="9" viewBox="0 0 900 615" role="img" aria-label="Successive partial red totals approach exactly one square unit"></svg><figcaption>Finite approximations converge to the exact infinite answer.</figcaption></figure>
-  </section>
-</section>
-<section class="final"><h2>Final answer</h2><p>The triangle’s 3 : 3 : 2 side ratio forces neighbouring radii to halve. Their areas are therefore multiplied by one-quarter. The given blue area of 3 generates a red area series whose exact sum is:</p><div class="big">Total red area = 1 square unit</div><p>Nothing was guessed from the drawing; every measurement and the infinite total follow from the information in the attached question.</p></section>
-<footer class="foot">Standalone, single-file solution · Inline SVG diagrams · No external scripts, network resources or font downloads · Keyboard: ←/→ changes the interactive proof stage.</footer>
 </main>
+
 <script>
-(()=>{
-'use strict';
-const NS='http://www.w3.org/2000/svg';
-const COLORS={bg:'#0b1b30',edge:'#d8eaf4',text:'#f3f8ff',muted:'#adc7d9',blue:'#50d9f0',red:'#fb7569',gold:'#ffd579',green:'#bce9c9',purple:'#c5b5fd',dim:'#56718b'};
-const $=(id)=>document.getElementById(id);
-const A={x:345,y:56},h=480,k=h/(2*Math.sqrt(2)),R=h/4;
-const B={x:A.x-k,y:A.y+h},C={x:A.x+k,y:A.y+h},F={x:A.x,y:A.y+h},O={x:A.x,y:A.y+3*R},P={x:A.x,y:A.y+1.5*R};
-const stages=[...document.querySelectorAll('.proof-card')];
-const allTitles=['Name the given lengths','Find sin α','Centre = 3 × radius','Prove radius halving','Convert lengths to areas','Find the first red areas','Shrink the entire stack','Solve for S','Second proof with a series','Check the infinite limit'];
-let current=0,auto=null, shrinkAnim=null,shrinkFraction=0;
-function svgEl(svg,tag,attrs={},content){const el=document.createElementNS(NS,tag);for(const [a,v] of Object.entries(attrs))el.setAttribute(a,String(v));if(content!==undefined)el.textContent=content;svg.appendChild(el);return el;}
-function rect(svg,x,y,w,height,fill='#163148',stroke='none',rx=12){return svgEl(svg,'rect',{x,y,width:w,height,rx,fill,stroke});}
-function text(svg,x,y,value,size=22,col=COLORS.text,anchor='middle',weight=800){return svgEl(svg,'text',{x,y,fill:col,'text-anchor':anchor,'dominant-baseline':'middle','font-family':'system-ui, Arial, sans-serif','font-size':size,'font-weight':weight},value);}
-function line(svg,p,q,color=COLORS.edge,width=3,more={}){return svgEl(svg,'line',{x1:p.x,y1:p.y,x2:q.x,y2:q.y,stroke:color,'stroke-width':width,'stroke-linecap':'round',...more});}
-function circle(svg,p,r,color,stroke=COLORS.bg,sw=2,opacity=1){return svgEl(svg,'circle',{cx:p.x,cy:p.y,r,fill:color,stroke,'stroke-width':sw,opacity});}
-function dot(svg,p,label='',dx=13,dy=0,col=COLORS.text){circle(svg,p,4,col,col,0);if(label)text(svg,p.x+dx,p.y+dy,label,21,col);}
-function badge(svg,x,y,width,value,color=COLORS.gold,size=20){rect(svg,x,y,width,42,'#17334b','#36546e',12);text(svg,x+width/2,y+22,value,size,color);}
-function addBackground(svg){svg.replaceChildren();rect(svg,0,0,900,615,COLORS.bg,'none',0);for(let y=85;y<580;y+=60)line(svg,{x:15,y},{x:880,y},'#182c40',1);}
-function triangle(svg,fade=1,sideLabels=false){svgEl(svg,'path',{d:`M ${A.x} ${A.y} L ${B.x} ${B.y} L ${C.x} ${C.y} Z`,stroke:COLORS.edge,'stroke-width':3.8,fill:'none',opacity:fade,'stroke-linejoin':'round'});if(sideLabels){text(svg,210,283,'3k',27,COLORS.gold);text(svg,485,283,'3k',27,COLORS.gold);text(svg,A.x,567,'2k',27,COLORS.gold);text(svg,A.x,35,'A',23);text(svg,B.x-22,B.y+23,'B',23);text(svg,C.x+24,C.y+23,'C',23);}}
-function nth(n){let r=R*Math.pow(.5,n);return {x:A.x,y:A.y+3*r,r};}
-function stack(svg,opt={}){let count=opt.count??11,opacity=opt.opacity??1,outline=opt.outline??false,fac=opt.factor??1;for(let i=count-1;i>=0;i--){const p=nth(i);const q={x:A.x+(p.x-A.x)*fac,y:A.y+(p.y-A.y)*fac};const rr=p.r*fac;const fill=outline?'none':(i===0?COLORS.blue:COLORS.red);circle(svg,q,rr,fill,outline?COLORS.gold:COLORS.bg,outline?3.5:2,opacity);}}
-function contact(n){const c=nth(n);return {x:c.x+c.r*(2*Math.sqrt(2)/3),y:c.y-c.r/3};}
-function right(svg,v,q1,q2,size=16,col=COLORS.gold){const unit=(p)=>{const dx=p.x-v.x,dy=p.y-v.y,l=Math.hypot(dx,dy);return{x:dx/l,y:dy/l}};const u=unit(q1),w=unit(q2);const p1={x:v.x+u.x*size,y:v.y+u.y*size},p2={x:p1.x+w.x*size,y:p1.y+w.y*size},p3={x:v.x+w.x*size,y:v.y+w.y*size};svgEl(svg,'path',{d:`M${p1.x} ${p1.y} L${p2.x} ${p2.y} L${p3.x} ${p3.y}`,stroke:col,'stroke-width':3,fill:'none'});}
-function arc(svg,v,q1,q2,rad,label='',labelDist=0,col=COLORS.gold){let s=Math.atan2(q1.y-v.y,q1.x-v.x),e=Math.atan2(q2.y-v.y,q2.x-v.x);let d=(e-s+2*Math.PI)%(2*Math.PI);if(d>Math.PI){s=e;d=2*Math.PI-d};e=s+d;const a={x:v.x+rad*Math.cos(s),y:v.y+rad*Math.sin(s)},b={x:v.x+rad*Math.cos(e),y:v.y+rad*Math.sin(e)};svgEl(svg,'path',{d:`M ${a.x} ${a.y} A${rad} ${rad} 0 0 1 ${b.x} ${b.y}`,fill:'none',stroke:col,'stroke-width':3});if(label)text(svg,v.x+(rad+labelDist)*Math.cos((s+e)/2),v.y+(rad+labelDist)*Math.sin((s+e)/2),label,23,col);}
-function focusPanel(svg,title,body,body2='',bottom=''){rect(svg,565,155,312,285,'#132b43','#31526c',15);text(svg,588,197,title,23,COLORS.gold,'start');text(svg,588,250,body,23,COLORS.text,'start');if(body2)text(svg,588,299,body2,23,COLORS.text,'start');if(bottom){line(svg,{x:587,y:355},{x:853,y:355},'#3c647e',2);text(svg,588,393,bottom,21,COLORS.green,'start');}}
-function draw(svg,scene,scaleV=0){addBackground(svg);if(scene===0){stack(svg);triangle(svg,1,true);let c=nth(0),s=nth(1);text(svg,c.x,c.y-26,'AREA',20,COLORS.bg);text(svg,c.x,c.y+30,'3',74,COLORS.bg);text(svg,s.x,s.y,'?',65,COLORS.bg);text(svg,600,95,'THE GIVEN FACTS',22,COLORS.gold);focusPanel(svg,'SIDES','3k , 3k , 2k','Blue AREA = 3','Red total = ?');}
-if(scene===1){stack(svg,{opacity:.11});triangle(svg,.52);svgEl(svg,'path',{d:`M${A.x} ${A.y} L${F.x} ${F.y} L${C.x} ${C.y}Z`,fill:'#163e52',stroke:COLORS.blue,'stroke-width':3});line(svg,A,F,COLORS.gold,3);line(svg,F,C,COLORS.gold,4);line(svg,A,C,COLORS.gold,4);right(svg,F,A,C,22);arc(svg,A,F,C,70,'α',31);dot(svg,A,'A',-20,-18);dot(svg,F,'F',-18,21);dot(svg,C,'C',18,19);text(svg,(F.x+C.x)/2,F.y-21,'k',27,COLORS.gold);text(svg,483,288,'3k',29,COLORS.gold);focusPanel(svg,'TRIANGLE AFC','opposite = k','hypotenuse = 3k','sin α = 1/3');}
-if(scene===2){stack(svg,{count:2,opacity:.35});triangle(svg,.56);const E=contact(0),D=contact(1);line(svg,A,E,COLORS.blue,3);line(svg,O,E,COLORS.blue,6);right(svg,E,A,O,20,COLORS.blue);line(svg,A,D,COLORS.red,3);line(svg,P,D,COLORS.red,5);right(svg,D,A,P,13,COLORS.red);line(svg,A,O,COLORS.gold,2,{'stroke-dasharray':'6 8'});dot(svg,A,'A',-18,-16);dot(svg,O,'O',-23,8,COLORS.blue);dot(svg,P,'P',-23,5,COLORS.red);dot(svg,E,'E',16,8,COLORS.blue);dot(svg,D,'D',16,0,COLORS.red);text(svg,260,321,'AO = 3R',24,COLORS.blue);text(svg,280,148,'AP = 3r',23,COLORS.red);focusPanel(svg,'SAME ANGLE α','R / AO = 1/3','r / AP = 1/3','AO=3R; AP=3r');}
-if(scene===3){stack(svg,{count:2,opacity:.30});triangle(svg,.40);let T={x:A.x,y:O.y-R};line(svg,A,O,'#7d91a9',2,{'stroke-dasharray':'7 9'});line(svg,P,T,COLORS.red,9);line(svg,T,O,COLORS.blue,9);dot(svg,A,'A',-22,-17);dot(svg,P,'P',-24,0,COLORS.red);dot(svg,T,'T',-24,0,COLORS.gold);dot(svg,O,'O',-24,0,COLORS.blue);text(svg,A.x+30,(P.y+T.y)/2,'r',29,COLORS.red);text(svg,A.x+30,(T.y+O.y)/2,'R',31,COLORS.blue);focusPanel(svg,'ONE DISTANCE PO','PO=3R − 3r','PO=R + r','⇒ r=R/2');}
-if(scene===4){stack(svg);triangle(svg,.6);let c0=nth(0),c1=nth(1),c2=nth(2);text(svg,c0.x,c0.y,'3',71,COLORS.bg);text(svg,c1.x,c1.y,'¾',48,COLORS.bg);line(svg,{x:c2.x+c2.r,y:c2.y},{x:560,y:c2.y},COLORS.muted,2);text(svg,570,c2.y,'3/16',23,COLORS.red,'start');focusPanel(svg,'SCALE FACTOR','radius × 1/2','area × (1/2)²','= area × 1/4');}
-if(scene===5){stack(svg);triangle(svg,.6);let c0=nth(0),c1=nth(1),c2=nth(2),c3=nth(3);text(svg,c0.x,c0.y,'3',75,COLORS.bg);text(svg,c1.x,c1.y,'3/4',34,COLORS.bg);line(svg,{x:c2.x+c2.r,y:c2.y},{x:544,y:c2.y-7},COLORS.muted,2);text(svg,555,c2.y-10,'3/16',23,COLORS.red,'start');line(svg,{x:c3.x+c3.r,y:c3.y},{x:544,y:c3.y-35},COLORS.muted,2);text(svg,555,c3.y-36,'3/64',23,COLORS.red,'start');focusPanel(svg,'AREA SOURCES','3 = given BLUE area','1/4 = area ratio','S = all reds');}
-if(scene===6){stack(svg,{opacity:.58});triangle(svg,.55);stack(svg,{outline:true,factor:1-scaleV/2,count:11});dot(svg,A,'A',-23,-15,COLORS.gold);focusPanel(svg,'THE SHRINK TRICK','Whole = 3 + S','Lengths × 1/2','Areas × 1/4');badge(svg,570,496,280,scaleV>0.999?'Gold outlines = reds':'Use the slider below',scaleV>0.999?COLORS.green:COLORS.gold,19);}
-if(scene===7){stack(svg,{opacity:.93});triangle(svg,.52);text(svg,O.x,O.y,'3',75,COLORS.bg);text(svg,525,141,'S',52,COLORS.red);line(svg,{x:486,y:136},{x:500,y:136},COLORS.red,3);line(svg,{x:500,y:136},{x:500,y:300},COLORS.red,3);line(svg,{x:486,y:300},{x:500,y:300},COLORS.red,3);focusPanel(svg,'SAME RED AREA','S = (3 + S)/4','4S = 3 + S','S = 1');}
-if(scene===8){text(svg,448,48,'RED-AREA SERIES',25,COLORS.gold);let rows=[['S','3/4 + 3/16 + 3/64 + …'],['S/4','3/16 + 3/64 + 3/256 + …'],['subtract','the matching tail cancels'],['3S/4','3/4'],['S','= 1']];rows.forEach((r,i)=>{let y=105+i*89;rect(svg,61,y,775,72,i===4?'#164939':'#153148','#3d5a72',10);text(svg,89,y+36,r[0],24,i===4?COLORS.green:COLORS.blue,'start');text(svg,255,y+36,r[1],23,i===4?COLORS.green:COLORS.text,'start')});}
-if(scene===9){text(svg,450,60,'PARTIAL TOTALS',27,COLORS.gold);let rows=[['1 circle','0.75'],['2 circles','0.9375'],['3 circles','0.984375'],['4 circles','0.99609375']];rows.forEach((r,i)=>{const y=100+i*92;rect(svg,110,y,680,72,'#163148','#3d5a72',12);text(svg,130,y+36,r[0],24,COLORS.muted,'start');text(svg,753,y+36,r[1],30,COLORS.text,'end');});badge(svg,248,503,404,'As N → ∞, total → 1',COLORS.green,23);}
-}
-function highlightStage(i){current=Math.max(0,Math.min(9,i));let source=stages[current].querySelector('.proof-text');let clone=source.cloneNode(true);clone.querySelector('.stepnum')?.remove();$('stageContent').replaceChildren();let seq=document.createElement('div');seq.className='seq';seq.textContent=`Step ${current+1} of 10`;$('stageContent').appendChild(seq);for(const child of [...clone.children])$('stageContent').appendChild(child);draw($('liveDiagram'),current,current===6?shrinkFraction:0);$('diagramCaption').textContent=[ 'Write every given length correctly.','Use opposite over hypotenuse.','The same α appears in both centre triangles.','The two expressions refer to the same PO.','Area ratios are squared length ratios.','The 3 is GIVEN; 1/4 is PROVED.','Scale the whole stack onto the red stack.','The unknown S comes from two matching areas.','The geometric series gives the same answer.','Finite totals converge to precisely 1.'][current];document.querySelectorAll('#stageNavigation button').forEach((b,j)=>b.setAttribute('aria-pressed',String(j===current)));$('prev').disabled=current===0;$('next').disabled=current===9;$('shrinkBox').hidden=current!==6;}
-function stop(){if(auto!==null){clearInterval(auto);auto=null}$('play').textContent='Play all steps';if(shrinkAnim!==null){cancelAnimationFrame(shrinkAnim);shrinkAnim=null}}
-function change(i){stop();highlightStage(i)}
-function updateScale(v){shrinkFraction=Math.max(0,Math.min(1,v));$('shrink').value=String(Math.round(shrinkFraction*100));$('scaleValue').textContent=`Scale ${(1-shrinkFraction/2).toFixed(2)}`;$('shrinkHint').textContent=shrinkFraction>.999?'Exact match: the whole stack, at half length scale, becomes the red stack. That is why S=(3+S)/4.':'At scale 0.50 the blue circle maps onto the first red circle, and every red circle maps onto the next one.';if(current===6)draw($('liveDiagram'),6,shrinkFraction);}
-$('stageNavigation').replaceChildren();allTitles.forEach((title,i)=>{let b=document.createElement('button');b.textContent=`${i+1}. ${title}`;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>change(i));$('stageNavigation').appendChild(b)});
-$('prev').addEventListener('click',()=>change(current-1));$('next').addEventListener('click',()=>change(current+1));
-$('play').addEventListener('click',()=>{if(auto!==null){stop();return}if(current===9)highlightStage(0);$('play').textContent='Pause';auto=setInterval(()=>{if(current===9){stop();return}highlightStage(current+1)},10500)});
-$('shrink').addEventListener('input',e=>{if(shrinkAnim!==null)cancelAnimationFrame(shrinkAnim);shrinkAnim=null;updateScale(Number(e.target.value)/100)});
-$('shrinkAnimate').addEventListener('click',()=>{if(shrinkAnim!==null)cancelAnimationFrame(shrinkAnim);let st=null;function frame(t){if(st===null)st=t;const n=Math.min(1,(t-st)/2400);updateScale(n*n*(3-2*n));if(n<1)shrinkAnim=requestAnimationFrame(frame);else shrinkAnim=null}updateScale(0);shrinkAnim=requestAnimationFrame(frame)});
-$('shrinkReset').addEventListener('click',()=>{if(shrinkAnim!==null)cancelAnimationFrame(shrinkAnim);shrinkAnim=null;updateScale(0)});
-document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;if(e.key==='ArrowRight'){e.preventDefault();change(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();change(current-1)}});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});
-draw($('overview'),0);document.querySelectorAll('.staticDiagram').forEach(svg=>draw(svg,Number(svg.dataset.scene),Number(svg.dataset.scene)===6?1:0));highlightStage(0);
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const P = {
+    navy:'#0f2035', white:'#ffffff', ink:'#17263b', muted:'#7f92a6', line:'#cfdae6',
+    blue:'#45d4ec', red:'#ff7765', gold:'#ffd166', green:'#77d7a0', pale:'#edf4f8'
+  };
+  const $ = id => document.getElementById(id);
+  const svg = $('diagram');
+  function node(tag, attrs={}){const el=document.createElementNS(NS,tag);for(const[k,v] of Object.entries(attrs)){el.setAttribute(k,v)}return el}
+  function add(tag, attrs, parent=svg){const el=node(tag,attrs);parent.appendChild(el);return el}
+  function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+  function line(x1,y1,x2,y2,stroke=P.white,w=3,dash=''){const a={x1,y1,x2,y2,stroke,'stroke-width':w,'stroke-linecap':'round'};if(dash)a['stroke-dasharray']=dash;return add('line',a)}
+  function txt(x,y,str,size=24,fill=P.white,anchor='middle',weight=700){return add('text',{x,y,fill,'font-size':size,'text-anchor':anchor,'font-weight':weight,'font-family':'Segoe UI, Arial, sans-serif'},svg).appendChild(document.createTextNode(str))}
+  function circle(x,y,r,fill='none',stroke=P.white,w=3,op=1){return add('circle',{cx:x,cy:y,r,fill,stroke,'stroke-width':w,opacity:op})}
+  function poly(points,fill='none',stroke=P.white,w=4,op=1){return add('polyline',{points:points.map(p=>p.join(',')).join(' '),fill,stroke,'stroke-width':w,'stroke-linejoin':'round','stroke-linecap':'round',opacity:op})}
+  function rect(x,y,w,h,fill='none',stroke='none',sw=1,rx=14,op=1){return add('rect',{x,y,width:w,height:h,fill,stroke,'stroke-width':sw,rx,opacity:op})}
+  function path(d,fill='none',stroke=P.white,w=3,op=1,dash=''){const a={d,fill,stroke,'stroke-width':w,opacity:op,'stroke-linecap':'round','stroke-linejoin':'round'};if(dash)a['stroke-dasharray']=dash;return add('path',a)}
+  function rightMark(x,y,size=16,color=P.white){path(`M${x},${y} h${size} v${size} h-${size}`, 'none', color, 3)}
+  function labelBox(x,y,w,h,text,color,bg,size=24){rect(x,y,w,h,bg,'none',1,14,.97);txt(x+w/2,y+h/2+size*.34,text,size,color)}
+  function faintFrame(){rect(20,20,860,580,'none','#27405c',2,18,.8)}
+
+  // Geometry model for the 3:3:2 triangle and tangent circle chain.
+  function model(){
+    const A={x:450,y:56}, B={x:160,y:560}, C={x:740,y:560};
+    const left={A,B}, right={A,C};
+    const bigR=120; // chosen for drawing only
+    const sinHalf = 1/3;
+    const dBig = 3*bigR;
+    const ux=0, uy=1; // centre line vertical here
+    const O={x:A.x+ux*dBig,y:A.y+uy*dBig};
+    const dist = Math.hypot(B.x-A.x,B.y-A.y);
+    function foot(Pt, L1, L2){
+      const vx=L2.x-L1.x, vy=L2.y-L1.y;
+      const t=((Pt.x-L1.x)*vx+(Pt.y-L1.y)*vy)/(vx*vx+vy*vy);
+      return {x:L1.x+t*vx, y:L1.y+t*vy};
+    }
+    const F=foot({x:(A.x+B.x)/2,y:(A.y+B.y)/2}, A, B); // helper not used for exactness
+    const halfBase = (C.x-B.x)/2;
+    return {A,B,C,O,bigR,halfBase};
+  }
+  const g = model();
+
+  function circleAt(n){
+    const r = g.bigR/Math.pow(2,n);
+    const d = 3*r;
+    return {x:g.A.x,y:g.A.y+d,r};
+  }
+  function tangentPointLeft(c){
+    // projection from centre onto line AB
+    const A=g.A,B=g.B;
+    const vx=B.x-A.x, vy=B.y-A.y;
+    const t=((c.x-A.x)*vx+(c.y-A.y)*vy)/(vx*vx+vy*vy);
+    return {x:A.x+t*vx,y:A.y+t*vy};
+  }
+  function tangentPointRight(c){
+    const A=g.A,C=g.C;
+    const vx=C.x-A.x, vy=C.y-A.y;
+    const t=((c.x-A.x)*vx+(c.y-A.y)*vx + 0)/(vx*vx+vy*vy);
+    // fix correct projection:
+    const t2=((c.x-A.x)*vx+(c.y-A.y)*vy)/(vx*vx+vy*vy);
+    return {x:A.x+t2*vx,y:A.y+t2*vy};
+  }
+  function drawTriangle(op=1){
+    poly([[g.B.x,g.B.y],[g.A.x,g.A.y],[g.C.x,g.C.y],[g.B.x,g.B.y]],'none',P.white,5,op);
+  }
+  function drawCentreLine(op=1,dash='8 8'){line(g.A.x,g.A.y,g.A.x,560,P.gold,2.6,dash);}
+  function drawChain(count=5, fadeAfter=null){
+    for(let i=0;i<count;i++){
+      const c = circleAt(i);
+      const fill = i===0 ? P.blue : P.red;
+      const op = (fadeAfter!==null && i>fadeAfter) ? 0.22 : 0.95;
+      circle(c.x,c.y,c.r,fill,'#0c1d31',3.5,op);
+    }
+  }
+  function drawBaseQuestion(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(1); drawChain(6,4);
+    labelBox(58,58,168,58,'Blue area = 3',P.ink,P.blue,28);
+    labelBox(628,74,210,56,'Red total = ?',P.ink,P.gold,28);
+    txt(g.A.x,g.A.y-16,'top vertex',17,P.gold);
+  }
+
+  function slide1(){
+    drawBaseQuestion();
+  }
+  function slide2(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.35);
+    const c = circleAt(1); // sample red circle
+    circle(c.x,c.y,c.r,P.red,'#0c1d31',4,1);
+    drawCentreLine(1);
+    const L=tangentPointLeft(c), R=tangentPointRight(c);
+    line(c.x,c.y,L.x,L.y,P.gold,4);
+    line(c.x,c.y,R.x,R.y,P.gold,4);
+    line(g.A.x,g.A.y,c.x,c.y,P.green,4);
+    rightMark(L.x-17,L.y-10,16,P.gold);
+    rightMark(R.x+2,R.y-12,16,P.gold);
+    txt(c.x,c.y+7,'centre',22,P.ink, 'middle', 800);
+    txt(g.A.x,g.A.y-18,'top vertex',17,P.green);
+    txt((c.x+L.x)/2-20,(c.y+L.y)/2,'radius',18,P.gold);
+    txt((c.x+R.x)/2+25,(c.y+R.y)/2,'radius',18,P.gold);
+    txt(g.A.x+48,(g.A.y+c.y)/2,'centre line',18,P.green,'start');
+  }
+  function slide3(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    // Half triangle picture
+    drawTriangle(.25);
+    drawCentreLine(1);
+    line(g.A.x,g.A.y,g.A.x,g.O.y,P.green,5);
+    const baseMid={x:g.A.x,y:g.B.y};
+    line(g.A.x,g.B.y,g.B.x,g.B.y,P.gold,5);
+    const thetaR=80; // just visual arc
+    path(`M ${g.A.x+14} ${g.A.y+52} A 58 58 0 0 0 ${g.A.x-22} ${g.A.y+58}`, 'none', P.gold, 3);
+    txt(g.A.x-8,g.A.y+84,'θ',28,P.gold);
+    txt(g.A.x-104,452,'opposite = 1 part',21,P.gold,'start');
+    txt(212,272,'hypotenuse = 3 parts',21,P.white,'start');
+    labelBox(95,64,235,56,'sin θ = 1 / 3',P.ink,P.gold,30);
+    // one generic small right triangle for any tangent circle
+    const c = circleAt(0);
+    const L=tangentPointLeft(c);
+    line(c.x,c.y,L.x,L.y,P.blue,4);
+    rightMark(L.x-16,L.y-8,15,P.blue);
+    txt((c.x+L.x)/2-12,(c.y+L.y)/2,'r',19,P.blue);
+    txt(g.A.x+28,(g.A.y+c.y)/2,'distance from top to centre',18,P.green,'start');
+  }
+  function slide4(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.45); drawCentreLine(1);
+    const C0=circleAt(0), C1=circleAt(1);
+    circle(C0.x,C0.y,C0.r,P.blue,'#0c1d31',4,1);
+    circle(C1.x,C1.y,C1.r,P.red,'#0c1d31',4,1);
+    line(g.A.x,g.A.y,C0.x,C0.y,P.green,4);
+    line(g.A.x,g.A.y,C1.x,C1.y,P.green,4);
+    txt(g.A.x+32,(g.A.y+C1.y)/2,'3r',24,P.red,'start');
+    txt(g.A.x+32,(C1.y+C0.y)/2,'3R − 3r',22,P.gold,'start');
+    txt(g.A.x+32,(g.A.y+C0.y)/2+12,'3R',24,P.blue,'start');
+    txt(C0.x,C0.y+10,'R',36,P.ink,'middle',800);
+    txt(C1.x,C1.y+7,'r',28,P.ink,'middle',800);
+    line(C0.x,C0.y,C1.x,C1.y,P.gold,4);
+    txt(C0.x+48,(C0.y+C1.y)/2,'R + r',22,P.gold,'start');
+  }
+  function slide5(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.55); drawChain(5,null);
+    const c0=circleAt(0), c1=circleAt(1), c2=circleAt(2), c3=circleAt(3);
+    txt(c0.x,c0.y+8,'3',58,P.ink,'middle',800);
+    txt(c1.x,c1.y+6,'3/4',34,P.ink,'middle',800);
+    txt(c2.x+120,c2.y+6,'3/16',25,P.red,'start',800);
+    line(c2.x+c2.r,c2.y,c2.x+108,c2.y,P.red,2.5);
+    txt(c3.x+95,c3.y-16,'3/64',22,P.red,'start',800);
+    line(c3.x+c3.r,c3.y,c3.x+83,c3.y-16,P.red,2.5);
+    labelBox(540,66,268,54,'radius halves',P.ink,P.gold,26);
+    labelBox(540,130,268,54,'area quarters',P.ink,P.gold,26);
+  }
+  function slide6(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.55); drawChain(6,4);
+    txt(675,210,'S',44,P.red);
+    txt(675,254,'=',26,P.white);
+    txt(675,300,'all red areas',23,P.white);
+    labelBox(74,76,188,54,'blue = 3',P.ink,P.blue,28);
+    labelBox(600,76,188,54,'red total = S',P.ink,P.gold,26);
+  }
+  function slide7(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.62); drawChain(6,4);
+    // draw shrunken outline chain in gold
+    for(let i=0;i<6;i++){
+      const c = circleAt(i);
+      const rr = c.r/2;
+      const cy = g.A.y + (c.y-g.A.y)/2;
+      circle(g.A.x,cy,rr,'none',P.gold,3,1);
+    }
+    drawCentreLine(.7,'6 6');
+    labelBox(560,62,252,54,'shrink by scale 1/2',P.ink,P.gold,26);
+    txt(628,198,'gold copy of',22,P.gold,'start');
+    txt(628,228,'whole stack',22,P.gold,'start');
+    txt(626,336,'lands exactly on',22,P.red,'start');
+    txt(626,366,'the red stack',22,P.red,'start');
+  }
+  function slide8(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.25); drawChain(4,3);
+    labelBox(505,66,296,56,'Area scale = (1/2)² = 1/4',P.ink,P.gold,24);
+    txt(645,184,'whole stack area = 3 + S',25,P.white,'middle');
+    txt(645,272,'shrunk whole stack = red stack',23,P.white,'middle');
+    txt(645,352,'so',22,P.gold,'middle');
+    txt(645,410,'S = (3 + S)/4',34,P.gold,'middle',800);
+  }
+  function slide9(){
+    clear(svg); rect(0,0,900,620,P.navy,'none',0,0,1); faintFrame();
+    drawTriangle(.18); drawChain(5,4);
+    txt(450,130,'S = (3 + S)/4',38,P.gold,'middle',800);
+    txt(450,220,'4S = 3 + S',36,P.white,'middle',800);
+    txt(450,300,'3S = 3',36,P.white,'middle',800);
+    txt(450,380,'S = 1',44,P.green,'middle',900);
+    labelBox(242,454,416,60,'Total area of ALL the red circles = 1',P.ink,P.green,28);
+  }
+
+  const slides = [
+    {
+      title:'Start with the exact question',
+      draw:slide1,
+      html:`
+        <p>We have an isosceles triangle with side ratio <b>3 : 3 : 2</b>.</p>
+        <p>The large <b>blue</b> incircle has area <b>3</b>.</p>
+        <p>Above it is an infinite chain of <b>red</b> circles. Each red circle touches the two sloping sides and also touches the circle directly below it.</p>
+        <div class="note"><b>Goal:</b> find the <b>total area</b> of all the red circles.</div>
+      `
+    },
+    {
+      title:'Why all the centres sit on the middle line',
+      draw:slide2,
+      html:`
+        <p>Pick any one of the circles near the top.</p>
+        <p>The two gold lines are radii drawn to the two sloping sides, so each one meets a side at <b>90°</b>.</p>
+        <p>Because the circle is tangent to <b>both</b> sides, its centre must be the same distance from both sides.</p>
+        <div class="note"><b>So the centre lies on the angle bisector</b> — that is the green middle line.</div>
+        <p class="small">This is why all circle centres line up down the middle.</p>
+      `
+    },
+    {
+      title:'Use the 3 : 3 : 2 triangle shape',
+      draw:slide3,
+      html:`
+        <p>Cut the triangle in half down the middle.</p>
+        <p>Then the half-base is <b>1 part</b> and the sloping side is <b>3 parts</b>.</p>
+        <div class="math">sin θ = opposite / hypotenuse = 1 / 3</div>
+        <p>Now look at the little right triangle made by:</p>
+        <p>• the <b>top vertex</b>,</p>
+        <p>• the <b>centre</b> of a tangent circle,</p>
+        <p>• the point where the radius meets the side.</p>
+        <p>For that small triangle,</p>
+        <div class="math">sin θ = radius / (distance from top vertex to centre)</div>
+        <p>But we already know <b>sin θ = 1/3</b>, so</p>
+        <div class="math">radius / distance = 1 / 3  &nbsp;⇒&nbsp;  distance = 3 × radius</div>
+        <div class="note gold"><b>Very important result:</b> for every circle in the chain, the distance from the top vertex down to its centre is <b>3 times its radius</b>.</div>
+      `
+    },
+    {
+      title:'Compare two neighbouring circles',
+      draw:slide4,
+      html:`
+        <p>Now only look at <b>two circles</b>: the big blue one with radius <b>R</b>, and the next red one with radius <b>r</b>.</p>
+        <p>From the previous step:</p>
+        <div class="math">distance from top to blue centre = 3R</div>
+        <div class="math">distance from top to red centre = 3r</div>
+        <p>So the distance <b>between the two centres</b> along the middle line is</p>
+        <div class="math">3R − 3r</div>
+        <p>But the two circles touch each other, so the centre-to-centre distance is also</p>
+        <div class="math">R + r</div>
+        <p>Therefore</p>
+        <div class="math">3R − 3r = R + r</div>
+        <div class="math">2R = 4r</div>
+        <div class="math answer">r = R / 2</div>
+        <div class="note"><b>Key conclusion:</b> each new circle has <b>half the radius</b> of the one below it.</div>
+      `
+    },
+    {
+      title:'Turn the radius pattern into an area pattern',
+      draw:slide5,
+      html:`
+        <p>If a radius is halved, the area is multiplied by <b>(1/2)² = 1/4</b>.</p>
+        <p>So each circle has <b>one quarter</b> of the area of the circle directly below it.</p>
+        <p>The blue circle area is given as <b>3</b>.</p>
+        <div class="math">first red area = 3 × 1/4 = 3/4</div>
+        <div class="math">second red area = 3/4 × 1/4 = 3/16</div>
+        <div class="math">third red area = 3/16 × 1/4 = 3/64</div>
+        <p>So the red areas form a geometric pattern.</p>
+      `
+    },
+    {
+      title:'Name the total red area',
+      draw:slide6,
+      html:`
+        <p>Let <b>S</b> mean the <b>total area of all the red circles</b>.</p>
+        <div class="math">S = 3/4 + 3/16 + 3/64 + ...</div>
+        <p>The whole stack is made of:</p>
+        <p>• the blue circle of area <b>3</b>, and</p>
+        <p>• the red circles of total area <b>S</b>.</p>
+        <div class="math">whole stack area = 3 + S</div>
+      `
+    },
+    {
+      title:'The sneaky trick: shrink the whole stack',
+      draw:slide7,
+      html:`
+        <p>This is the clever step.</p>
+        <p>Shrink the <b>entire stack of circles</b> towards the top vertex by a <b>length scale of 1/2</b>.</p>
+        <p>Then:</p>
+        <p>• the blue circle becomes the size of the first red circle,</p>
+        <p>• the first red circle becomes the size of the second red circle,</p>
+        <p>• the second red circle becomes the size of the third red circle,</p>
+        <p>and so on forever.</p>
+        <div class="note gold">So the shrunken copy of the <b>whole stack</b> matches <b>exactly the red stack</b>.</div>
+      `
+    },
+    {
+      title:'Write the equation for the total area',
+      draw:slide8,
+      html:`
+        <p>The original whole stack has area <b>3 + S</b>.</p>
+        <p>When lengths are scaled by <b>1/2</b>, areas are scaled by <b>1/4</b>.</p>
+        <p>So the area of the shrunken whole stack is</p>
+        <div class="math">(3 + S) / 4</div>
+        <p>But that shrunken whole stack is exactly the red stack, whose area is <b>S</b>.</p>
+        <div class="math answer">S = (3 + S) / 4</div>
+      `
+    },
+    {
+      title:'Solve it cleanly',
+      draw:slide9,
+      html:`
+        <div class="math">S = (3 + S) / 4</div>
+        <div class="math">4S = 3 + S</div>
+        <div class="math">3S = 3</div>
+        <div class="math answer">S = 1</div>
+        <div class="note green"><b>Final answer:</b> the total area of all the red circles is <b>1 square unit</b>.</div>
+        <p>If you want, I can also make a <b>second even slower version</b> where each slide has just <b>one sentence</b> and one tiny change to the diagram.</p>
+      `
+    }
+  ];
+
+  let current = 0;
+  function render(){
+    slides[current].draw();
+    $('stepnum').textContent = `Step ${current+1} of ${slides.length}`;
+    $('title').textContent = slides[current].title;
+    $('content').innerHTML = slides[current].html;
+    $('prev').disabled = current===0;
+    $('next').disabled = current===slides.length-1;
+    document.querySelectorAll('#progress button').forEach((b,i)=>{
+      b.classList.toggle('active', i===current);
+      b.setAttribute('aria-current', i===current ? 'step' : 'false');
+    });
+  }
+  function setStep(n){ current=Math.max(0,Math.min(slides.length-1,n)); render(); }
+  $('prev').addEventListener('click',()=>setStep(current-1));
+  $('next').addEventListener('click',()=>setStep(current+1));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'){e.preventDefault();setStep(current+1)}
+    if(e.key==='ArrowLeft'){e.preventDefault();setStep(current-1)}
+  });
+  slides.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.textContent=String(i+1);
+    b.title=s.title;
+    b.addEventListener('click',()=>setStep(i));
+    $('progress').appendChild(b);
+  });
+  render();
 })();
 </script>
 </body>
